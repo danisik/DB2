@@ -1,0 +1,31 @@
+\c databaseName 						- změna aktivní databáze
+\list									- vylistování všech databází
+\dt										- vylistování všech tabulek v aktuální databázi
+\i path_to_file 						- spuštění sql skriptu
+select public.nazev_metody()			- spuštění funkce
+
+select table_schema as schema_name,
+       table_name as view_name
+from information_schema.views
+where table_schema not in 
+('information_schema', 'pg_catalog')
+order by schema_name,
+         view_name;						- vylistování všech views
+		 
+		 
+select * from papir where ID_HRA = 1;	- výpis papíru pro danou hru
+CALL STATISTIKY(1);						- volání procedury
+
+
+UTF8 ZNAKY V PSQL
+---------------------------
+* do konfiguračního souboru postgresql.conf v ../Program Files/PostgreSQL/... upravit tyto řádky:
+	** lc_messages = 'Czech_Czechia.Cputf8'
+	** lc_monetary = 'Czech_Czechia.Cputf8'		
+	** lc_numeric = 'Czech_Czechia.Cputf8'			
+	** lc_time = 'Czech_Czechia.Cputf8'	
+	
+* před tím než se pustí psql, zadat tyto dva příkazy do konzole:
+	** SET PGCLIENTENCODING=utf-8
+	** chcp 65001
+			
