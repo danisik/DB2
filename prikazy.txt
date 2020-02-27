@@ -1,18 +1,12 @@
 \c databaseName 						- změna aktivní databáze
 \list									- vylistování všech databází
 \dt										- vylistování všech tabulek v aktuální databázi
+\df										- vylistování všech funkcí a procedur
+\dp										- vylistování všech tabulek a pohledů
+select * from pg_trigger;				- vylistování všech triggerů
 \i path_to_file 						- spuštění sql skriptu
-select public.nazev_metody()			- spuštění funkce
 
-select table_schema as schema_name,
-       table_name as view_name
-from information_schema.views
-where table_schema not in 
-('information_schema', 'pg_catalog')
-order by schema_name,
-         view_name;						- vylistování všech views
-		 
-		 
+select public.nazev_metody()			- spuštění funkce			
 select * from papir where ID_HRA = 1;	- výpis papíru pro danou hru
 CALL STATISTIKY(1);						- volání procedury
 
