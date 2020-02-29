@@ -23,3 +23,10 @@ UTF8 ZNAKY V PSQL
 	** SET PGCLIENTENCODING=utf-8
 	** chcp 65001
 			
+			
+
+\i test_scenarios/test_scenario_draw.sql;
+\i test_scenarios/test_scenario_win_first_1.sql;
+\i test_scenarios/test_scenario_win_first_2.sql;
+\i test_scenarios/test_scenario_win_second_1.sql;
+\i test_scenarios/test_scenario_win_second_2.sql;
